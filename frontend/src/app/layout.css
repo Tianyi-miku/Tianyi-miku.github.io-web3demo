@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.App {
+  padding: 0px 30px;
+  box-sizing: border-box;
+  height: 100%;
+
+  .content {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+}
+
+
+.main-card-wrapper,
+.main-card__inner-wrapper {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.main-card-wrapper {
+  min-height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 5vh;
+}
+
+.cards-wrapper {
+  min-height: 800px;
+}
+
+.main-card__inner-wrapper {
+  flex-flow: column;
+  background: linear-gradient(90deg, wheat 0%, #f5deb3cc 50%, #f5deb300 100%);
+  width: 100%;
+  padding: 100px 5vw;
+}
+
+.header-txt {
+  color: #404040;
+  font-size: 4em;
+  max-width: 350px;
+  line-height: 1em;
+  margin: 0px;
+}
