@@ -10,26 +10,10 @@ import Rimg from "../../../../public/assets/R.jpg"
 import { Contract, formatEther } from 'ethers';
 import { useEthersProvider, useEthersSigner } from '@/app/provider_ether';
 
-const myLotteryABI = require("../../../../contracts/RandomNumberlottery.json").abi
+// const myLotteryABI = require("../../../../contracts/RandomNumberlottery.json").abi
+const myLotteryABI = require("../../../../contracts/RandomNumberlottery_s.json").abi
 const Mock = [
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_requestId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_consumer",
-        "type": "address"
-      }
-    ],
-    "name": "fulfillRandomWords",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
+  "function fulfillRandomWords(uint256 _requestId, address _consumer)"
 ]
 
 
@@ -38,7 +22,7 @@ export default function lottery() {
   const [balance, setBalance] = useState(Object)
   const [winer, setwiner] = useState('')
   const signer = useEthersSigner()
-  const IVRFCoordinatorV2Mock = new Contract(VRFCoordinatorV2Mock, Mock, signer)
+  // const IVRFCoordinatorV2Mock = new Contract(VRFCoordinatorV2Mock, Mock, signer)
   const RandomNumberlotterYcontract = new Contract(RandomNumberlottery, myLotteryABI, signer)
 
   useEffect(() => {
@@ -67,14 +51,14 @@ export default function lottery() {
   }
 
   async function start() {
-    // if (Number(formatEther(balance.value)) > 0.1) {
-    const requset = await RandomNumberlotterYcontract.requestRandomWords()
-    const receipt = await requset.wait()
-    if (receipt.status) {
-      // getRound()
+    if (Number(formatEther(balance.value)) > 0.1) {
+      const requset = await RandomNumberlotterYcontract.requestRandomWords()
+      const receipt = await requset.wait()
+      if (receipt.status) {
+        getRound()
+      }
+      return;
     }
-    return;
-    // }
   }
 
   const getBlance = async () => {
@@ -94,16 +78,13 @@ export default function lottery() {
 
 
   async function getRound() {
-    const lastId = await RandomNumberlotterYcontract.lastRequestId()
-    const requset = await IVRFCoordinatorV2Mock.fulfillRandomWords(Number(lastId), VRFV2Wrapper)
-    const receipt = await requset.wait()
-    if (receipt.status) {
-      getWiner()
-      const tRequest = await RandomNumberlotterYcontract.getRequestStatus(Number(lastId))
-      console.log('====================================');
-      console.log(tRequest);
-      console.log('====================================');
-    }
+    // const lastId = await RandomNumberlotterYcontract.lastRequestId()
+    // const requset = await IVRFCoordinatorV2Mock.fulfillRandomWords(Number(lastId), VRFV2Wrapper)
+    // const receipt = await requset.wait()
+    // if (receipt.status) {
+    //   getWiner()
+    //   const tRequest = await RandomNumberlotterYcontract.getRequestStatus(Number(lastId))
+    // }
   }
 
   async function withdrow() {
@@ -144,8 +125,7 @@ export default function lottery() {
       </div>
       <div className='pt-10'>
         如果是本地chain.link MOCK数据 要手动调用fulfillRandomWords
-        <Button onClick={() => getRound()}>本地手动填充随机数</Button>
-        <Button onClick={() => getWiner()}>获取获胜人</Button>
+        {/* <Button onClick={() => getRound()}>本地手动填充随机数</Button> */}
       </div>
     </div >
   )
