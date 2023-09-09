@@ -5,3 +5,4 @@ export * as vrFv2ConsumerSol from "./VRFv2Consumer.sol";
 export * as myNftSol from "./myNft.sol";
 export { RandomNumberDirectFundingConsumerV2__factory } from "./RandomNumberDirectFundingConsumerV2__factory";
 export { RandomNumberlottery__factory } from "./RandomNumberlottery__factory";
+export { RandomNumberlottery_s__factory } from "./RandomNumberlottery_s__factory";

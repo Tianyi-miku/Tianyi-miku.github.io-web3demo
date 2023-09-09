@@ -153,6 +153,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RandomNumberDirectFundingConsumerV2__factory>;
     getContractFactory(
+      name: "RandomNumberlottery_s",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RandomNumberlottery_s__factory>;
+    getContractFactory(
       name: "RandomNumberlottery",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RandomNumberlottery__factory>;
@@ -337,6 +341,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.RandomNumberDirectFundingConsumerV2>;
     getContractAt(
+      name: "RandomNumberlottery_s",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.RandomNumberlottery_s>;
+    getContractAt(
       name: "RandomNumberlottery",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -488,6 +497,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RandomNumberDirectFundingConsumerV2>;
     deployContract(
+      name: "RandomNumberlottery_s",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RandomNumberlottery_s>;
+    deployContract(
       name: "RandomNumberlottery",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RandomNumberlottery>;
@@ -671,6 +684,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RandomNumberDirectFundingConsumerV2>;
+    deployContract(
+      name: "RandomNumberlottery_s",
+      args: any[],
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RandomNumberlottery_s>;
     deployContract(
       name: "RandomNumberlottery",
       args: any[],

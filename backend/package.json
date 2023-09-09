@@ -4,6 +4,7 @@
     "deploy_s": "yarn hardhat run scripts/deploy.ts --network sepolia",
     "deploy": "yarn hardhat run scripts/mockdeploy.ts --network localhost",
     "deployM": "yarn hardhat run scripts/mock.ts --network localhost",
+    "deploy_lottery": "yarn hardhat run scripts/lotterydeploy.ts --network sepolia",
     "dev": "yarn hardhat node",
     "test": "yarn hardhat test --network localhost",
     "test-staging": "yarn hardhat test --network sepolia",

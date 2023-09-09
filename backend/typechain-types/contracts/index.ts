@@ -7,3 +7,4 @@ import type * as myNftSol from "./myNft.sol";
 export type { myNftSol };
 export type { RandomNumberDirectFundingConsumerV2 } from "./RandomNumberDirectFundingConsumerV2";
 export type { RandomNumberlottery } from "./RandomNumberlottery";
+export type { RandomNumberlottery_s } from "./RandomNumberlottery_s";
