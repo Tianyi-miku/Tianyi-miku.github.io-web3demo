@@ -76,10 +76,8 @@ export type { IERC165 } from "./@openzeppelin/contracts/utils/introspection/IERC
 export { IERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/IERC165__factory";
 export type { MyNFT } from "./contracts/myNft.sol/MyNFT";
 export { MyNFT__factory } from "./factories/contracts/myNft.sol/MyNFT__factory";
-export type { RandomNumberDirectFundingConsumerV2 } from "./contracts/RandomNumberDirectFundingConsumerV2";
-export { RandomNumberDirectFundingConsumerV2__factory } from "./factories/contracts/RandomNumberDirectFundingConsumerV2__factory";
-export type { RandomNumberlottery_s } from "./contracts/RandomNumberlottery_s";
-export { RandomNumberlottery_s__factory } from "./factories/contracts/RandomNumberlottery_s__factory";
+export type { RandomNumberlottery_s } from "./contracts/RandomNumberlottery_sepolia.sol/RandomNumberlottery_s";
+export { RandomNumberlottery_s__factory } from "./factories/contracts/RandomNumberlottery_sepolia.sol/RandomNumberlottery_s__factory";
 export type { RandomNumberlottery } from "./contracts/RandomNumberlottery";
 export { RandomNumberlottery__factory } from "./factories/contracts/RandomNumberlottery__factory";
 export type { RandomNumberConsumerV2 } from "./contracts/VRFv2Consumer.sol/RandomNumberConsumerV2";

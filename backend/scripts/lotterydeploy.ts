@@ -6,8 +6,7 @@ async function main() {
   const RandomNumberlottery_s = await Factory.deploy(4399)
   await RandomNumberlottery_s.deployed()
   console.log(RandomNumberlottery_s.address);
-  //0xa9777B46f4F8D897275CCFd31334c20ac0daB700
-  //0x0AA4D97C21Da50639d9Da4b4683236965A977f5B
+  //0x3A6d255584Ce563e7cae078967BD1847fB380871
 }
 
 // We recommend this pattern to be able to use async/await everywhere

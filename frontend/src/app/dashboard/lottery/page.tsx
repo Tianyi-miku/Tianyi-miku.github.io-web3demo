@@ -54,9 +54,7 @@ export default function lottery() {
     if (Number(formatEther(balance.value)) > 0.1) {
       const requset = await RandomNumberlotterYcontract.requestRandomWords()
       const receipt = await requset.wait()
-      if (receipt.status) {
-        getRound()
-      }
+      console.log(receipt);
       return;
     }
   }
@@ -70,21 +68,8 @@ export default function lottery() {
 
   const getWiner = async () => {
     const winer = await RandomNumberlotterYcontract.getwiner()
-    console.log('====================================');
     console.log(winer);
-    console.log('====================================');
     setwiner(winer)
-  }
-
-
-  async function getRound() {
-    // const lastId = await RandomNumberlotterYcontract.lastRequestId()
-    // const requset = await IVRFCoordinatorV2Mock.fulfillRandomWords(Number(lastId), VRFV2Wrapper)
-    // const receipt = await requset.wait()
-    // if (receipt.status) {
-    //   getWiner()
-    //   const tRequest = await RandomNumberlotterYcontract.getRequestStatus(Number(lastId))
-    // }
   }
 
   async function withdrow() {
@@ -100,7 +85,7 @@ export default function lottery() {
     <div>
       <div className=''>
         <div className='text-center p-10 text-lg'>
-          猫猫抽奖！
+          猫猫抽奖！（chainlink上获取随机数）
           <span className='pt-5'>(超过0.1 eth可开奖！)</span>
           <Button className='ml-10' onClick={() => joinPlay()}>参与抽奖！</Button>
           <div className='ml-10'>
@@ -120,12 +105,15 @@ export default function lottery() {
         获奖人{winer}
       </div>
 
+      <div>如果失败，则是因为回调气体太低导致失败，可更改callbackGasLimit</div>
       <div className='pt-10'>
         <Button onClick={() => withdrow()}>提取奖金！</Button>
+        提取为了测试没做限制，任何人都可以将里面的测试币提取出来！
       </div>
       <div className='pt-10'>
-        如果是本地chain.link MOCK数据 要手动调用fulfillRandomWords
-        {/* <Button onClick={() => getRound()}>本地手动填充随机数</Button> */}
+        此用例是sepolia上。
+        如果是本地chain.link MOCK数据 部署完成之后，要手动调用fulfillRandomWords
+        运行 '/backend/scripts/mock.ts' ！
       </div>
     </div >
   )

@@ -4,4 +4,4 @@ export const VRFV2Wrapper = '0x43ca3D2C94be00692D207C6A1e60D8B325c6f12f' //mock�
 export const VRFCoordinatorV2Mock = '0x73511669fd4dE447feD18BB79bAFeAC93aB7F31f' //mock本地部署地址
 // export const RandomNumberlottery = '0x391342f5acAcaaC9DE1dC4eC3E03f2678f7c78F1' //mock本地部署地址
 
-export const RandomNumberlottery = '0x0AA4D97C21Da50639d9Da4b4683236965A977f5B' //sp部署地址
+export const RandomNumberlottery = '0x3A6d255584Ce563e7cae078967BD1847fB380871' //sp部署地址

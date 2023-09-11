@@ -149,10 +149,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MyNFT__factory>;
     getContractFactory(
-      name: "RandomNumberDirectFundingConsumerV2",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.RandomNumberDirectFundingConsumerV2__factory>;
-    getContractFactory(
       name: "RandomNumberlottery_s",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RandomNumberlottery_s__factory>;
@@ -336,11 +332,6 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.MyNFT>;
     getContractAt(
-      name: "RandomNumberDirectFundingConsumerV2",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.RandomNumberDirectFundingConsumerV2>;
-    getContractAt(
       name: "RandomNumberlottery_s",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -492,10 +483,6 @@ declare module "hardhat/types/runtime" {
       name: "MyNFT",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MyNFT>;
-    deployContract(
-      name: "RandomNumberDirectFundingConsumerV2",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.RandomNumberDirectFundingConsumerV2>;
     deployContract(
       name: "RandomNumberlottery_s",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -679,11 +666,6 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MyNFT>;
-    deployContract(
-      name: "RandomNumberDirectFundingConsumerV2",
-      args: any[],
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.RandomNumberDirectFundingConsumerV2>;
     deployContract(
       name: "RandomNumberlottery_s",
       args: any[],

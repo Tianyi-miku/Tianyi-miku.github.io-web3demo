@@ -15,7 +15,11 @@ import "hardhat/console.sol";
 
 contract RandomNumberlottery_s is VRFConsumerBaseV2, ConfirmedOwner {
     event RequestSent(uint256 requestId, uint32 numWords);
-    event RequestFulfilled(uint256 requestId, uint256[] randomWords);
+    event RequestFulfilled(
+        uint256 requestId,
+        uint256[] randomWords,
+        address winer
+    );
     event Log(address, uint256, uint);
     error InsufficientFunds(uint256 balance, uint256 paid);
     error RequestNotFound(uint256 requestId);
@@ -50,7 +54,7 @@ contract RandomNumberlottery_s is VRFConsumerBaseV2, ConfirmedOwner {
     // this limit based on the network that you select, the size of the request,
     // and the processing of the callback request in the fulfillRandomWords()
     // function.
-    uint32 callbackGasLimit = 100000;
+    uint32 callbackGasLimit = 300000;
 
     // The default is 3, but you can set this higher.
     uint16 requestConfirmations = 3;
@@ -125,14 +129,13 @@ contract RandomNumberlottery_s is VRFConsumerBaseV2, ConfirmedOwner {
         uint256 _requestId,
         uint256[] memory _randomWords
     ) internal override {
-        require(s_requests[_requestId].exists, "request not found");
-        s_requests[_requestId].fulfilled = true;
-        s_requests[_requestId].randomWords = _randomWords;
+        // require(s_requests[_requestId].exists, "request not found");
+        // s_requests[_requestId].fulfilled = true;
+        // s_requests[_requestId].randomWords = _randomWords;
         //这里处理winer 简单取模people长度，默认第一个
         uint256 index = _randomWords[0] % people.length;
         winer = people[index];
-        console.log(winer);
-        emit RequestFulfilled(_requestId, _randomWords);
+        emit RequestFulfilled(_requestId, _randomWords, winer);
     }
 
     function getNumberOfRequests() external view returns (uint256) {

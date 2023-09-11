@@ -6,7 +6,6 @@ async function main() {
   const ChainBattles = await Factory.deploy()
   await ChainBattles.deployed()
   console.log(ChainBattles.address);
-  // 0xA2871011d246f458245Ec201A56217756590C63c
   // 0x00E275e0bFF194e7835467B7d937623271A88905
 }
 
