@@ -21,7 +21,7 @@ const items: MenuProps['items'] = [
     key: 'mint',
     label: (
       <Link href="/dashboard/mintNFT">
-        铸造NFT（Sepolia）
+        铸造NFT Sepolia
       </Link>
     ),
   },
@@ -29,21 +29,25 @@ const items: MenuProps['items'] = [
     key: 'myNFT',
     label: (
       <Link href="/dashboard/myNFT">
-        我的NFT（Sepolia）
+        MYNFT
       </Link>
     ),
   },
   {
     label: (
       <Link href="/dashboard/lottery">
-        lottery
+        lottery(抽奖)
       </Link>
     ),
-    key: 'app',
+    key: 'lottery',
   },
   {
-    label: '标题3',
-    key: 'SubMenu',
+    label: (
+      <Link href="/dashboard/trading">
+        (交易)trading
+      </Link>
+    ),
+    key: 'trading',
   },
   {
     label: '标题4',
@@ -73,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <div className='content'>
             <div className='flex justify-between pt-5'>
-              <div><Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} /></div>
+              <Menu onClick={onClick} style={{ minWidth: '60%', flex: "auto" }} selectedKeys={[current]} mode="horizontal" items={items} />
               <div>
                 <ConnectButton label='连接' />
               </div>
