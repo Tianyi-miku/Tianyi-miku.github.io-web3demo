@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
-require('dotenv').config({ path: './.env' })
+// require('dotenv').config({ path: './.env' })
 const webpack = require('webpack')
-const dotenv = require('dotenv');
 
 const nextConfig = {
   output: 'export',

@@ -2,12 +2,15 @@
   "name": "skymiku",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tianyi-miku.github.io/web3_dapp/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "deploy": "gh-pages -d out",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^1.0.9",
@@ -30,5 +33,8 @@
     "typescript": "5.1.6",
     "viem": "^1.9.2",
     "wagmi": "^1.3.11"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
