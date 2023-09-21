@@ -12,6 +12,9 @@ const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || ""
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || "https://eth-sepolia.g.alchemy.com/v2/your-api-key"
 const SEPOLIA_APIKEY = process.env.SEPOLIA_APIKEY || ''
 
+const polygon_RPC_URL = process.env.polygon_RPC_URL || "https://polygon-mumbai.g.alchemy.com/v2/your-api-key"
+const polygon_ApiKey = process.env.polygon_ApiKey || ''
+
 const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 
 const config: HardhatUserConfig = {
@@ -39,10 +42,17 @@ const config: HardhatUserConfig = {
       chainId: 11155111,
       timeout: 80000,
     },
+    polygon: {
+      url: polygon_RPC_URL,
+      accounts: [PRIVATE_KEY],
+      chainId: 80001,
+      timeout: 80000,
+    }
   },
   etherscan: {
     apiKey: {
       sepolia: SEPOLIA_APIKEY,
+      polygonMumbai: polygon_ApiKey
     }
   },
   gasReporter: {

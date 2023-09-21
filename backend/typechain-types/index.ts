@@ -78,8 +78,10 @@ export type { ERC165 } from "./@openzeppelin/contracts/utils/introspection/ERC16
 export { ERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/ERC165__factory";
 export type { IERC165 } from "./@openzeppelin/contracts/utils/introspection/IERC165";
 export { IERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/IERC165__factory";
-export type { MyERC20 } from "./contracts/myErc20.sol/MyERC20";
-export { MyERC20__factory } from "./factories/contracts/myErc20.sol/MyERC20__factory";
+export type { CrossBridge } from "./contracts/crossBridge.sol/CrossBridge";
+export { CrossBridge__factory } from "./factories/contracts/crossBridge.sol/CrossBridge__factory";
+export type { MyERC20 } from "./contracts/crossBridge.sol/MyERC20";
+export { MyERC20__factory } from "./factories/contracts/crossBridge.sol/MyERC20__factory";
 export type { MyNFT } from "./contracts/myNft.sol/MyNFT";
 export { MyNFT__factory } from "./factories/contracts/myNft.sol/MyNFT__factory";
 export type { RandomNumberlottery_s } from "./contracts/RandomNumberlottery_sepolia.sol/RandomNumberlottery_s";

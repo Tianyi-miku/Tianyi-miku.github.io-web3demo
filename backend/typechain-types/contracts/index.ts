@@ -5,6 +5,8 @@ import type * as randomNumberlotterySepoliaSol from "./RandomNumberlottery_sepol
 export type { randomNumberlotterySepoliaSol };
 import type * as vrFv2ConsumerSol from "./VRFv2Consumer.sol";
 export type { vrFv2ConsumerSol };
+import type * as crossBridgeSol from "./crossBridge.sol";
+export type { crossBridgeSol };
 import type * as myErc20Sol from "./myErc20.sol";
 export type { myErc20Sol };
 import type * as myNftSol from "./myNft.sol";

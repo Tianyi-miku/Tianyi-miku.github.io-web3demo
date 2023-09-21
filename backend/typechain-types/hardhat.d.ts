@@ -157,6 +157,14 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165__factory>;
     getContractFactory(
+      name: "CrossBridge",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CrossBridge__factory>;
+    getContractFactory(
+      name: "MyERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MyERC20__factory>;
+    getContractFactory(
       name: "MyERC20",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MyERC20__factory>;
@@ -362,6 +370,16 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC165>;
     getContractAt(
+      name: "CrossBridge",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CrossBridge>;
+    getContractAt(
+      name: "MyERC20",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.MyERC20>;
+    getContractAt(
       name: "MyERC20",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -537,6 +555,14 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165>;
     deployContract(
+      name: "CrossBridge",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CrossBridge>;
+    deployContract(
+      name: "MyERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MyERC20>;
+    deployContract(
       name: "MyERC20",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MyERC20>;
@@ -741,6 +767,16 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165>;
+    deployContract(
+      name: "CrossBridge",
+      args: any[],
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CrossBridge>;
+    deployContract(
+      name: "MyERC20",
+      args: any[],
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MyERC20>;
     deployContract(
       name: "MyERC20",
       args: any[],
