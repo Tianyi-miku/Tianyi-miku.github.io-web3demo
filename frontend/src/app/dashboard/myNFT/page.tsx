@@ -42,7 +42,7 @@ export default function myNft() {
     }
     return () => {
     }
-  }, [])
+  }, [address])
 
   const openMoal = (item: any) => {
     settokenId(item.tokenId)

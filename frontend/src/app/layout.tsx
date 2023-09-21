@@ -5,7 +5,7 @@ import { Providers } from './providers';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import "./layout.css"
@@ -50,8 +50,12 @@ const items: MenuProps['items'] = [
     key: 'trading',
   },
   {
-    label: '标题4',
-    key: 'alipay',
+    label:
+      (<Link href="/dashboard/stride">
+        CrossBridge(链桥)
+      </Link>)
+    ,
+    key: 'stride',
   },
 ];
 
@@ -64,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const router = useRouter()
   const params = usePathname();
   useEffect(() => {
-    if (!params) {
+    if (params === '/') {
       router.push('/dashboard/mintNFT')
     }
     return () => {

@@ -22,8 +22,10 @@ import {
   zora,
   goerli,
   sepolia,
+  polygonMumbai
 } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
+// import { polygonMumbai } from 'viem/dist/types/chains';
 
 const localhost = {
   id: 31337,
@@ -52,6 +54,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     arbitrum,
     base,
     zora,
+    polygonMumbai,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli, sepolia, localhost] : []),
   ],
   [publicProvider()]

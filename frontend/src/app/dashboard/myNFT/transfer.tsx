@@ -1,6 +1,5 @@
 "use client";
 
-import useNotication from '@/app/_util/notication'
 import { Button, Input } from 'antd'
 import React, { useState } from 'react'
 import { sepolia } from 'viem/chains'
@@ -38,33 +37,23 @@ const Transfer = (prop: any) => {
 
   const sutransfer = async (value: string) => {
     const [account] = await walletClient.getAddresses()
-    await walletClient.writeContract({
+    const trans = await walletClient.writeContract({
       account,
       address: NFTAddress,
       abi: myNFTABI,
       functionName: 'safeTransferFrom',
       args: [prop.from, value, prop.tokenId]
     })
+    return trans
   }
-
-  // const getApprove = async () => {
-  //   const data2 = await publicClient.readContract({
-  //     address: NFTAddress,
-  //     abi: myNFTABI,
-  //     functionName: 'getApproved',
-  //     args: [prop.tokenId]
-  //   })
-  //   console.log(data2);
-  // }
 
   const transferTO = async (value: string) => {
     await suapprove(value)
-    await sutransfer(value)
-    // const r = await getApprove()
-
-    setTimeout(() => {
-      prop.sendSuccess()
-    }, 10000);
+    const rep = await sutransfer(value)
+    console.log('====================================');
+    console.log('转让成功');
+    console.log('====================================');
+    prop.sendSuccess()
   }
 
   return (

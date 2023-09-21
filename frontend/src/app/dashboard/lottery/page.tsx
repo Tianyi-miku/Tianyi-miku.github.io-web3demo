@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
-import { mainnet, useContractRead, useContractWrite } from 'wagmi'
+import React, { useEffect, useMemo, useState } from 'react'
+import { mainnet, useAccount, useContractRead, useContractWrite } from 'wagmi'
 import { VRFCoordinatorV2Mock, RandomNumberlottery, VRFV2Wrapper } from '../contact'
 import { Button, notification } from 'antd';
 import { parseEther, parseGwei } from 'viem';
@@ -19,6 +19,7 @@ const Mock = [
 
 export default function lottery() {
 
+  const { address, isConnected } = useAccount()
   const [balance, setBalance] = useState(Object)
   const [winer, setwiner] = useState('')
   const signer = useEthersSigner()
@@ -26,11 +27,12 @@ export default function lottery() {
   const RandomNumberlotterYcontract = new Contract(RandomNumberlottery, myLotteryABI, signer)
 
   useEffect(() => {
-    getBlance()
-
+    if (RandomNumberlotterYcontract.runner) {
+      getBlance()
+    }
     return () => {
     }
-  }, [])
+  }, [RandomNumberlotterYcontract.runner, address])
 
   useEffect(() => {
     if (RandomNumberlotterYcontract.runner) {
@@ -39,8 +41,6 @@ export default function lottery() {
     return () => {
     }
   }, [RandomNumberlotterYcontract.runner])
-
-
 
   async function joinPlay() {
     const transaction = await RandomNumberlotterYcontract.joinPlay({ value: parseEther('0.1') })
@@ -54,7 +54,7 @@ export default function lottery() {
     if (Number(formatEther(balance.value)) > 0.1) {
       const requset = await RandomNumberlotterYcontract.requestRandomWords()
       const receipt = await requset.wait()
-      console.log(receipt);
+      getWiner();
       return;
     }
   }
@@ -105,7 +105,7 @@ export default function lottery() {
         获奖人{winer}
       </div>
 
-      <div>如果失败，则是因为回调气体太低导致失败，可更改callbackGasLimit</div>
+      <div>如果失败，因为回调气体是手动设置的，部署时候可更改callbackGasLimit</div>
       <div className='pt-10'>
         <Button onClick={() => withdrow()}>提取奖金！</Button>
         提取为了测试没做限制，任何人都可以将里面的测试币提取出来！
@@ -113,7 +113,7 @@ export default function lottery() {
       <div className='pt-10'>
         此用例是sepolia上。
         如果是本地chain.link MOCK数据 部署完成之后，要手动调用fulfillRandomWords
-        运行 '/backend/scripts/mock.ts' ！
+        或者运行 '/backend/scripts/mock.ts' ！
       </div>
     </div >
   )
