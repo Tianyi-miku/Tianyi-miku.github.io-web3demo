@@ -8,8 +8,8 @@ import { usePublicClient } from 'wagmi'
 import { Button } from 'antd'
 
 // 初始化两条链的provider
-const providerPolygon = new ethers.JsonRpcProvider("https://polygon-mumbai.g.alchemy.com/v2/y2juaqtv1YsC7WQYtC0--_KHgIzj7s0C");
-const providerSepolia = new ethers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/ReBoqRd9z_DXXZIJQELN6KXNmJmYoWa3");
+const providerPolygon = new ethers.JsonRpcProvider(`https://polygon-mumbai.g.alchemy.com/v2/${process.env.Polygon_scan_key}`);
+const providerSepolia = new ethers.JsonRpcProvider(`https://eth-sepolia.g.alchemy.com/v2/${process.env.Sepolia_scan_key}`);
 
 
 // 初始化两条链的signer
