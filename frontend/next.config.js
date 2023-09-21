@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const dotenv = require('dotenv');
 
 const nextConfig = {
+  output: 'export',
   webpack: config => {
     config.plugins.push(
       new webpack.EnvironmentPlugin(process.env)

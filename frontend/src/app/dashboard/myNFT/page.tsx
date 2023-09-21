@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { useAccount, useNetwork } from 'wagmi';
 import Transfer from "./transfer"
 
-export default function myNft() {
+const MyNft = () => {
   const { address, isConnected } = useAccount()
   const [NFTs, setNFTs] = useState([])
   const { chain } = useNetwork()
@@ -28,7 +28,7 @@ export default function myNft() {
       apiKey: process.env.api_key,
       network: chain?.network === "sepolia" ? Network.ETH_SEPOLIA : Network.ETH_SEPOLIA
     });
-    
+
     nfts = await alchemy.nft.getNftsForOwner((address || '').toString())
     if (nfts) {
       setNFTs(nfts.ownedNfts)
@@ -79,3 +79,5 @@ export default function myNft() {
   )
 
 }
+
+export default MyNft

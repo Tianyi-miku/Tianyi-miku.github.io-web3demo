@@ -8,7 +8,7 @@ import {
 import { NFTAddress } from '../contact'
 
 const myNFTABI = require("../../../../contracts/MyNFT.json").abi
-export default function Mint(prop: any) {
+const Mint = (prop: any) => {
   const { config } = usePrepareContractWrite({
     address: NFTAddress,
     abi: myNFTABI,
@@ -35,3 +35,5 @@ export default function Mint(prop: any) {
     </div>
   )
 }
+
+export default Mint

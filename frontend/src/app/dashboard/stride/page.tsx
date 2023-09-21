@@ -21,7 +21,7 @@ const walletPolygon = new ethers.Wallet(privateKey, providerPolygon);
 const walletSepolia = new ethers.Wallet(privateKey, providerSepolia);
 
 const crossBridgeAbi: any = require("../../../../contracts/crossBridge.json").abi
-export default function page() {
+const Stride = () => {
 
   const [s_balance, sets_Balance] = useState('0')
   const [p_balance, setp_Balance1] = useState('0')
@@ -166,3 +166,5 @@ export default function page() {
     </>
   )
 }
+
+export default Stride

@@ -8,7 +8,7 @@ import { formatEther, parseEther, parseUnits } from 'viem'
 
 const myErc20ABI: any = require("../../../../contracts/myERC20.json").abi
 const Trading: any = require("../../../../contracts/Trading_swap.json").abi
-export default function trading() {
+const MyTrading = () => {
   const signer = useEthersSigner()
   const myErc20 = new Contract(Erc20, myErc20ABI, signer)
   const myErc20_1 = new Contract(Erc20_1, myErc20ABI, signer)
@@ -230,3 +230,4 @@ export default function trading() {
     </div>
   )
 }
+export default MyTrading

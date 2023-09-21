@@ -17,7 +17,7 @@ const Mock = [
 ]
 
 
-export default function lottery() {
+const Lottery = () => {
 
   const { address, isConnected } = useAccount()
   const [balance, setBalance] = useState(Object)
@@ -119,4 +119,5 @@ export default function lottery() {
   )
 }
 
+export default Lottery
 

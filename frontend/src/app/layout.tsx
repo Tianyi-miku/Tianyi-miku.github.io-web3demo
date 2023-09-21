@@ -1,6 +1,5 @@
 'use client';
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { Providers } from './providers';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { MenuProps } from 'antd';
@@ -9,8 +8,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import "./layout.css"
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
