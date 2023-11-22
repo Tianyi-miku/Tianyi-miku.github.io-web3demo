@@ -7,7 +7,7 @@
 # 运行前端代码.
 
 ```
-cd .\backend\
+cd .\frontend\
 
 yarn install
 ```

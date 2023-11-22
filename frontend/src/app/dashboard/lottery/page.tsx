@@ -88,10 +88,10 @@ const Lottery = () => {
           猫猫抽奖！（chainlink上获取随机数）
           <span className='pt-5'>(超过0.1 eth可开奖！)</span>
           <Button className='ml-10' onClick={() => joinPlay()}>参与抽奖！</Button>
-          <div className='ml-10'>
-            当前奖池{balance.formatted}{balance.symbol}
-          </div>
         </div>
+      </div>
+      <div className='ml-10'>
+        当前奖池{balance.formatted}{balance.symbol}
       </div>
       <div className='w-full flex justify-center'>
         <img src={Rimg.src} className='h-96'></img>
@@ -102,14 +102,13 @@ const Lottery = () => {
       </div>
 
       <div>
-        获奖人{winer}
+        当前获奖人{winer}
       </div>
-
-      <div>如果失败，因为回调气体是手动设置的，部署时候可更改callbackGasLimit</div>
       <div className='pt-10'>
         <Button onClick={() => withdrow()}>提取奖金！</Button>
-        提取为了测试没做限制，任何人都可以将里面的测试币提取出来！
       </div>
+      <div>提取为了测试没做限制，任何人都可以将里面的测试币提取出来！</div>
+      <div>如果失败，因为回调气体是手动设置的，部署时候可更改callbackGasLimit</div>
       <div className='pt-10'>
         此用例是sepolia上。
         如果是本地chain.link MOCK数据 部署完成之后，要手动调用fulfillRandomWords

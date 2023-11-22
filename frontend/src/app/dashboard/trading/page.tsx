@@ -183,7 +183,7 @@ const MyTrading = () => {
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" onClick={() => getToken1Mount()}>
-              预计兑换多少
+              查看预计兑换多少
             </Button>
             <Button type="primary" htmlType="submit">
               Submit
@@ -220,7 +220,7 @@ const MyTrading = () => {
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" onClick={() => getToken2Mount()}>
-            预计兑换多少
+           查看预计兑换多少
           </Button>
           <Button type="primary" htmlType="submit">
             Submit
